@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block contenidoQueCambia %}
+
+
+
+{% if  cursos %}
+<p> Estamos buscando el: {{camada}}</p>
+<ul>
+{% for curso in cursos  %}
+    <li> nombre : {{curso.nombre}} </li>
+    <li> camada: {{curso.camada}} </li>
+
+    {% endfor %}
+</ul>
+{% elif curso not in cursos %}
+<p> No hay datos con esa descripción</p>
+
+{% else %}
+<p style="color: red;">{{respuesta}}</p>
+
+{% endif %}
+{% endblock contenidoQueCambia %}
