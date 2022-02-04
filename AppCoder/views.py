@@ -52,3 +52,12 @@ def curso_formulario(request):
     miFormulario=CursoFormulario()       #en este caso deja el formulario vacío 
 
     return render(request, 'AppCoder/curso_formulario.html', {"miFormulario": miFormulario})
+
+def busquedaCamada(request):
+    return render(request, 'AppCoder/busquedaCamada.html')
+
+def buscar(request):
+    
+    respuesta = f"Estoy buscando la camada numero: {request.GET['camada']}"
+
+    return HttpResponse(respuesta)
